@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin - CamInvest</title>
+<style>body{background:#0a1931;color:#fff;font-family:Arial;padding:15px}.box{background:#fff;color:#111;padding:14px;border-radius:14px;margin:10px 0}input{width:100%;padding:12px;border-radius:10px;border:1px solid #ccc;margin:6px 0}button{width:100%;padding:12px;border:0;border-radius:10px;font-weight:900} .b1{background:#0a1931;color:#fff}.b2{background:gold}</style>
+</head>
+<body>
+<div style="max-width:420px;margin:0 auto">
+<h2>Admin Panel - 678657567</h2>
+<div id="login" class="box">
+<input id="p" type="password" placeholder="Password: Promise123">
+<button class="b1" onclick="if(document.getElementById('p').value==='Promise123'){document.getElementById('login').style.display='none';document.getElementById('panel').style.display='block';load()}else alert('Wrong')">LOGIN</button>
+</div>
+<div id="panel" style="display:none">
+<div class="box">
+<h3>Add Balance</h3>
+<input id="ph" placeholder="User Phone">
+<input id="am" type="number" placeholder="Amount">
+<button class="b1" onclick="let b=parseInt(localStorage.getItem('bal')||0);b+=parseInt(document.getElementById('am').value);localStorage.setItem('bal',b);alert('Added! New Bal: '+b)">ADD FOR THIS PHONE (DEMO)</button>
+</div>
+<div class="box">
+<h3>Withdraw Requests</h3>
+<div id="w"></div>
+<button class="b2" onclick="load()">Refresh</button>
+</div>
+</div>
+</div>
+<script>
+function load(){
+let w=JSON.parse(localStorage.getItem('withdraws')||'[]');
+document.getElementById('w').innerHTML=w.map((x,i)=>`<div style="border:1px solid #ccc;padding:8px;margin:5px;border-radius:8px">${x.phone} - ${x.amt}F - ${x.date} <button onclick="let a=JSON.parse(localStorage.getItem('withdraws'));a.splice(${i},1);localStorage.setItem('withdraws',JSON.stringify(a));load()">Paid</button></div>`).join('')||'No requests. Real ones come via WhatsApp';
+}
+</script>
+</body>
+</html>

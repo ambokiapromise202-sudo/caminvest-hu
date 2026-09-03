@@ -1,44 +1,56 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>CamInvest - Sean Morgan TikTok Earn</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head><body style="background:#f5f7fb;padding-bottom:90px;font-family:sans-serif">
-<div style="background:linear-gradient(to right,#000,#ff0050);color:white;padding:16px">
-<h1 style="font-weight:bold;font-size:20px">CamInvest Hub 🇨🇲</h1>
-<p style="font-size:13px">Sean Morgan @ambokiapromise792 - Watch & Earn</p>
-<div style="background:rgba(255,255,255,0.2);border-radius:12px;padding:12px;margin-top:10px;display:flex;justify-content:space-between">
-<div><p style="font-size:11px">Balance</p><b id="bal">XAF 105</b></div>
-<div><p style="font-size:11px">Done</p><b id="done">0/10</b></div>
-</div></div>
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GREEN INVEST BUEA - VIP</title><style>body{margin:0;font-family:Arial;background:#f2f2f2;color:#222;padding-bottom:75px}.top{background:#fff;padding:12px;text-align:center;font-weight:bold;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}.vip{background:#fff;border-radius:12px;margin:10px;padding:14px;position:relative;box-shadow:0 1px 4px rgba(0,0,0,.06)}.vip b{font-size:16px}.vip.meta{font-size:13px;color:#666;margin:4px 0}.vip.meta span{color:#222;font-weight:600}.vip.orange{color:#e67e22;font-size:12px;margin-top:6px}.vip img{position:absolute;right:12px;top:45px;width:95px;height:75px;object-fit:cover;border-radius:8px;border:1px solid #eee}.pur{position:absolute;right:12px;top:12px;background:#f1b600;color:#fff;border:0;padding:6px 16px;border-radius:16px;font-weight:bold;font-size:12px}.pur.gray{background:#bdbdbd}.o{position:fixed;bottom:0;left:0;width:100%;background:#fff;display:flex;justify-content:space-around;padding:8px 0;border-top:1px solid #e0e0e0;z-index:20}.o div{font-size:11px;text-align:center;color:#999}.o.on{color:#222;font-weight:bold}.t{display:none}.t.on{display:block}.card{background:#fff;margin:10px;border-radius:12px;padding:14px} input{width:100%;padding:12px;margin:6px 0;border-radius:8px;border:1px solid #ddd;box-sizing:border-box}.btn{width:100%;padding:12px;border:0;border-radius:8px;font-weight:bold;background:#111;color:#fff}.auth{position:fixed;top:0;left:0;width:100%;height:100%;background:#f2f2f2;z-index:99;display:flex;align-items:center;justify-content:center;padding:15px;box-sizing:border-box}.authBox{background:#fff;padding:20px;border-radius:16px;width:100%;max-width:360px}</style></head><body>
 
-<div style="margin:16px;background:white;border-radius:16px;padding:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05)">
-<p style="font-weight:bold">🎬 Featured: Sean Morgan TikTok</p>
-<a href="https://vm.tiktok.com/ZS9BbLLrWKNaH-MGPcs/" target="_blank" style="font-size:12px;color:#ff0050">https://vm.tiktok.com/ZS9BbLLrWKNaH-MGPcs/</a>
-</div>
+<div id="auth" class="auth"><div class="authBox"><h3 style="text-align:center;margin:0">GREEN INVEST BUEA</h3><p style="text-align:center;font-size:12px;color:#888">VIP Investment Platform</p><div id="loginBox"><input id="lPhone" placeholder="Phone Number"><input id="lPass" type="password" placeholder="Password"><button class="btn" onclick="doLogin()" style="background:#f1b600">Login</button><p style="text-align:center;font-size:12px">No account? <a href="#" onclick="showAuth('reg')" style="color:#f1b600;font-weight:bold">Register</a></p></div><div id="regBox" style="display:none"><input id="rName" placeholder="Full Name"><input id="rPhone" placeholder="Phone"><input id="rPass" type="password" placeholder="Password"><button class="btn" onclick="doReg()" style="background:#111">Register</button><p style="text-align:center;font-size:12px">Have account? <a href="#" onclick="showAuth('login')" style="color:#f1b600;font-weight:bold">Login</a></p></div></div></div>
 
-<div style="padding:0 16px"><h2 style="font-weight:bold;margin-bottom:12px">📺 Daily Tasks - Earn 10.5 XAF each</h2><div id="list"></div></div>
+<div class="top">Product <span style="float:right;font-size:11px"><span id="uName"></span> | <span onclick="logout()" style="color:red">Logout</span></span></div>
 
-<button id="wdBtn" style="position:fixed;bottom:20px;right:16px;left:16px;background:#16a34a;color:white;padding:14px;border-radius:30px;font-weight:bold;box-shadow:0 4px 15px rgba(0,0,0,0.3);z-index:50">💸 Withdraw to MTN MoMo - Min 100F</button>
+<div id="h" class="t"><div class="card"><small>Balance</small><h2 id="b" style="margin:4px 0">0 FCFA</h2><small id="b3">$0</small><div style="display:flex;gap:8px;margin-top:10px"><button onclick="show('r')" style="flex:1;padding:10px;background:#f1b600;border:0;border-radius:8px;font-weight:bold">Deposit</button><button onclick="show('w')" style="flex:1;padding:10px;background:#111;color:#fff;border:0;border-radius:8px;font-weight:bold">Withdraw</button></div></div><div class="card"><b>🏠 Home</b><br><small>Welcome to GREEN INVEST BUEA - 360 days vending machine business</small></div></div>
 
-<div id="modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.7);z-index:999;align-items:center;justify-content:center;padding:16px">
-<div style="background:white;border-radius:16px;padding:20px;width:100%;max-width:380px">
-<h2 style="font-weight:bold;font-size:18px">Withdraw</h2>
-<input id="num" placeholder="MoMo Number e.g. 678657567" style="width:100%;border:1px solid #ddd;padding:12px;border-radius:10px;margin-top:12px">
-<select id="type" style="width:100%;border:1px solid #ddd;padding:12px;border-radius:10px;margin-top:8px"><option>MTN Mobile Money</option><option>Orange Money</option></select>
-<input id="amt" type="number" placeholder="Amount e.g. 100" style="width:100%;border:1px solid #ddd;padding:12px;border-radius:10px;margin-top:8px">
-<button id="sendWd" style="background:#16a34a;color:white;width:100%;padding:12px;border-radius:10px;margin-top:12px;font-weight:bold">✅ Send Withdraw Request</button>
-<button onclick="document.getElementById('modal').style.display='none'" style="background:#eee;width:100%;padding:10px;border-radius:10px;margin-top:8px">Cancel</button>
-</div></div>
+<div id="p" class="t on"><div id="pl"></div></div>
 
-<script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
-import {getFirestore,collection,addDoc} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
-const firebaseConfig={apiKey:"AIzaSyBhMWKR7UBD4zaXCCn08WLeOrD2yvWlicY",authDomain:"caminvest-hub-14129.firebaseapp.com",projectId:"caminvest-hub-14129",storageBucket:"caminvest-hub-14129.firebasestorage.app",messagingSenderId:"992533738944",appId:"1:992533738944:web:9776d1a82b840f33378425"};
-const app=initializeApp(firebaseConfig);const db=getFirestore(app);
-const tiktok="https://vm.tiktok.com/ZS9BbLLrWKNaH-MGPcs/";
-const list=document.getElementById('list');let c=0;
-for(let i=1;i<=10;i++){let d=document.createElement('div');d.style.cssText="background:white;border-radius:16px;padding:12px;margin-bottom:12px;box-shadow:0 2px 8px rgba(0,0,0,0.05)";d.innerHTML=`<div style="display:flex;justify-content:space-between"><b>Task ${i}: Watch Sean</b><span style="background:#dcfce7;color:green;padding:2px 8px;border-radius:10px;font-size:12px">+10.5 XAF</span></div><div style="background:black;border-radius:12px;margin-top:8px;padding:24px;text-align:center;color:white"><p>🎥 TikTok Video ${i}</p><a href="${tiktok}" target="_blank" style="background:#ff0050;color:white;padding:8px 16px;border-radius:8px;display:inline-block;margin-top:8px;text-decoration:none;font-size:13px">▶️ Open TikTok Video</a></div><button class="claimBtn" style="background:#ff0050;color:white;width:100%;padding:12px;border-radius:10px;margin-top:10px;font-weight:bold;border:none">⏱️ Watch 30s & Claim 10.5 XAF</button>`;list.appendChild(d);}
-list.addEventListener('click',e=>{if(!e.target.classList.contains('claimBtn'))return;let btn=e.target;let s=30;btn.disabled=true;let iv=setInterval(()=>{s--;btn.innerText=`⏳ Watching... ${s}s`;if(s<=0){clearInterval(iv);btn.innerText="✅ Claimed +10.5 XAF";btn.style.background="#16a34a";c++;document.getElementById('done').innerText=c+"/10";let b=parseFloat(document.getElementById('bal').innerText.replace(/[^0-9.]/g,''));document.getElementById('bal').innerText="XAF "+(b+10.5);if(c==10)alert("🎉 You earned 105 XAF today!");}},1000);window.open(tiktok,"_blank");});
-document.getElementById('wdBtn').onclick=()=>{document.getElementById('modal').style.display='flex'};
-document.getElementById('sendWd').onclick=async()=>{let num=document.getElementById('num').value;let amt=document.getElementById('amt').value;let type=document.getElementById('type').value;if(!num||!amt){alert("Enter number & amount");return;}if(amt<100){alert("Min 100 XAF");return;}try{await addDoc(collection(db,"withdrawals"),{phone:num,amount:Number(amt),method:type,status:"pending",createdAt:new Date()});alert(`✅ Request Sent!\n${type}\n${num}\n${amt} XAF\nCheck admin.html`);document.getElementById('modal').style.display='none';}catch(e){alert("Go to Firebase Console -> Firestore -> Create Database -> Test mode! Error: "+e.message);}};
+<div id="r" class="t"><div class="card"><h3>Deposit</h3><b id="cb">0 FCFA</b><br><input id="a" type="number" placeholder="Amount" oninput="dl()"><div style="background:#fffde7;padding:10px;border-radius:8px;margin:8px 0;text-align:center"><b id="mtnCode" style="font-size:16px">*126*1*678657567*5000#</b><br><small>MTN MoMo</small></div><button onclick="copyMTN()" style="width:100%;padding:10px;background:#f1b600;border:0;border-radius:8px;font-weight:bold">📋 COPY CODE & DIAL</button><input id="x" placeholder="Enter TxID after payment" style="margin-top:10px"><button class="btn" onclick="dep()" style="background:#f1b600;margin-top:8px">Submit Deposit</button></div></div>
+
+<div id="w" class="t"><div class="card"><h3>Withdraw</h3><b id="b2">0 FCFA</b><br><input id="wa" type="number" placeholder="Amount min 1000"><input id="wm" placeholder="MoMo number"><button class="btn" onclick="wd()" style="background:#111">Withdraw</button></div></div>
+
+<div id="o" class="t"><div class="card"><h3>📦 My Orders</h3><div id="ol">No orders</div></div></div>
+
+<div id="e" class="t"><div class="card"><h3>Team</h3><input id="rf" readonly><button class="btn" onclick="navigator.clipboard.writeText(rf.value);alert('Copied')" style="background:#f1b600;margin-top:6px">Copy Referral Link</button></div></div>
+
+<div id="mine" class="t"><div class="card"><h3>Mine</h3><p>Phone: <span id="uPhone"></span></p><p>Balance: <span id="cb2">0</span></p><button onclick="show('admin')" style="padding:6px;border:1px dashed #999;background:#fff;border-radius:6px;font-size:11px">Admin</button></div></div>
+
+<div id="admin" class="t"><div class="card" style="border:2px solid #f1b600"><h3>Admin</h3><input id="adminPass" type="password" placeholder="678657567"><button onclick="adminLogin()" class="btn" style="background:#f1b600">Unlock</button><div id="adminContent" style="display:none;margin-top:10px"><input id="adminUserBal" type="number" placeholder="Add balance"><button onclick="adminAddBal()" style="padding:8px;background:#16a34a;color:#fff;border:0;border-radius:6px">Add</button><div id="adminOrders" style="font-size:11px;margin-top:8px"></div></div></div></div>
+
+<div class="o"><div onclick="show('h')" id="n-h">🏠<br>Home</div><div onclick="show('p')" id="n-p" class="on">📋<br>Product</div><div onclick="show('e')" id="n-e">👥<br>Team</div><div onclick="show('mine')" id="n-mine">👤<br>Mine</div></div>
+
+<script>
+const prods=[
+{a:2500,d:350,t:126000,ic:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200",n:"VIP1"},
+{a:5000,d:800,t:288000,ic:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200",n:"VIP2"},
+{a:12000,d:2000,t:720000,ic:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200",n:"VIP3"},
+{a:38000,d:6900,t:2484000,ic:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200",n:"VIP4",dis:true},
+{a:65000,d:12000,t:4320000,ic:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200",n:"VIP5"},
+{a:100000,d:19500,t:7020000,ic:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200",n:"VIP6"},
+{a:200000,d:40000,t:14400000,ic:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200",n:"VIP7"},
+{a:350000,d:75000,t:27000000,ic:"https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=200",n:"VIP8"}
+];
+let bal=0,act=[],currentUser=null;
+function getUsers(){return JSON.parse(localStorage.getItem('users')||'{}')}function saveUsers(u){localStorage.setItem('users',JSON.stringify(u))}
+function showAuth(t){loginBox.style.display=t=='login'?'block':'none';regBox.style.display=t=='reg'?'block':'none'}
+function doReg(){let n=rName.value,p=rPhone.value,pw=rPass.value;if(!n||!p||!pw)return alert('Fill all');let u=getUsers();if(u[p])return alert('Exists');u[p]={name:n,phone:p,pass:pw,bal:0,act:[]};saveUsers(u);localStorage.setItem('current',p);location.reload()}
+function doLogin(){let p=lPhone.value,pw=lPass.value;let u=getUsers();if(!u[p]||u[p].pass!=pw)return alert('Wrong');localStorage.setItem('current',p);location.reload()}
+function logout(){localStorage.removeItem('current');location.reload()}
+function loadCurrent(){let cur=localStorage.getItem('current');if(!cur){auth.style.display='flex';return false;}let u=getUsers();if(!u[cur]){auth.style.display='flex';return false;}currentUser=u[cur];bal=currentUser.bal||0;act=currentUser.act||[];auth.style.display='none';uName.innerText=currentUser.name;uPhone.innerText=currentUser.phone;return true}
+function saveCurrent(){let u=getUsers();u[currentUser.phone].bal=bal;u[currentUser.phone].act=act;saveUsers(u)}
+function renderP(){let h='';prods.forEach(pr=>{h+=`<div class=vip><div style="display:flex;justify-content:space-between"><b>${pr.n}</b><button class="pur ${pr.dis?'gray':''}" onclick="buy(${pr.a},'${pr.n}',${pr.d},${pr.t})">Purchase</button></div><div class=meta>Price :<span>FCFA ${pr.a.toLocaleString()}</span></div><div class=meta>Daily income:<span>FCFA ${pr.d.toLocaleString()}</span></div><div class=meta>Total income:<span>FCFA ${pr.t.toLocaleString()}</span></div><div class=meta>Validity period:<span>360 days</span></div><div class=orange>Generate revenue 24 hours after purchase</div><img src="${pr.ic}" onerror="this.src='https://via.placeholder.com/95x75/f1b600/fff?text=POP'"></div>`});pl.innerHTML=h}
+function up(){let f=bal.toLocaleString()+' FCFA';b.innerText=cb.innerText=b2.innerText=f;cb2.innerText=f;b3.innerText='$'+(bal/600).toFixed(2);saveCurrent();let hh='';act.forEach((A,i)=>{let can=Date.now()-A.l>86400000||!A.l;hh+=`<div class=vip><b>${A.n}</b><br><small>Daily ${A.d}F | Total ${A.t}F | ${A.c}/360 days</small><br><small>Earned ${(A.c*A.d).toLocaleString()}F</small><br><button class=btn style=background:${can?'#f1b600':'#ccc'} onclick=cl(${i})>${can?'Claim '+A.d+'F':'Claimed today'}</button></div>`});ol.innerHTML=hh||'No orders';rf.value=location.origin+location.pathname+'?ref='+currentUser.phone}
+function show(id){document.querySelectorAll('.t').forEach(t=>t.classList.remove('on'));document.getElementById(id).classList.add('on');document.querySelectorAll('.o div').forEach(d=>d.classList.remove('on'));let nn=document.getElementById('n-'+id);if(nn)nn.classList.add('on')}
+function buy(am,n,d,t){act.unshift({n:n,am:am,d:d,t:t,m:360,c:0,l:0});up();alert(n+' Purchased! Income starts after 24h');show('o')}
+function copyMTN(){let v=a.value||5000;let c='*126*1*678657567*'+v+'#';navigator.clipboard.writeText(c).then(()=>alert('Copied: '+c));mtnCode.innerText=c}
+function dl(){let v=a.value||5000;mtnCode.innerText='*126*1*678657567*'+v+'#'}
+function dep(){let v=+a.value,xv=x.value;if(!v||!xv)return alert('Enter amount+TxID');bal+=v;up();window.open('https://wa.me/237678657567?text=DEPOSIT '+v+' '+currentUser.phone+' Tx:'+xv,'_blank');show('o')}
+function wd(){let v=+wa.value;if(!v||v<1000||v>bal)return alert('Min 1000');bal-=v;up();window.open('https://wa.me/237678657567?text=WITHDRAW '+v+' to '+wm.value+' '+currentUser.phone,'_blank')}
+function cl(i){let A=act[i];if(Date.now()-A.l<86400000&&A.c>0)return alert('Come back after 24h');if(A.c>=A.m)return alert('Completed');A.c++;A.l=Date.now();bal+=A.d;up();alert('+'+A.d+'F')}
+function adminLogin(){if(adminPass.value=='678657567'){adminContent.style.display='block';let u=getUsers();adminOrders.innerHTML=Object.keys(u).map(k=>`${u[k].name} ${k} ${u[k].bal}F`).join('<br>')}else alert('Wrong')}
+function adminAddBal(){let v=+adminUserBal.value;if(!v)return;bal+=v;up();alert('Added')}
+if(loadCurrent()){renderP();up();dl()}
 </script></body></html>
